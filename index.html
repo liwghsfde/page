@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3D播放器</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background: url("images/1.jpg") no-repeat;
+            background-size: cover;
+            overflow: hidden;
+            
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            margin-left: -100px;
+            transform-style: preserve-3d;
+            /*transform:  rotateX(-20deg);*/
+            animation: sport 6s linear 0s infinite normal;
+        }
+        ul:hover{
+            animation-play-state: paused;
+        }
+        ul:hover li img{
+            opacity: 0.5;
+        }
+        ul li:hover img{
+            opacity: 1;
+        }
+        @keyframes sport {
+            from{
+                /*注意点：动画中如果有和默认样式中同名的属性，会覆盖默认样式中同名的属性*/
+                /*在编写动画的时候，固定不变的值写在前面，需要变化的值写在后面*/
+                transform: rotateX(-20deg) rotateY(0deg);
+            }
+            to{
+                transform:rotateX(-20deg) rotateY(360deg);
+            }
+        }
+
+        /*@keyframes sport {*/
+            /*from{*/
+                /*!*注意点：动画中如果有和默认样式中同名的属性，会覆盖默认样式中同名的属性*!*/
+                /*!*在编写动画的时候，固定不变的值写在前面，需要变化的值写在后面*!*/
+                /*transform:  rotateY(0deg) rotateX(-20deg);*/
+            /*}*/
+            /*to{*/
+                /*transform: rotateY(360deg) rotateX(-20deg);*/
+            /*}*/
+        /*}*/
+
+        ul li{
+            list-style: none;
+            width: 200px;
+            height: 200px;
+            font-size: 60px;
+            text-align: center;
+            line-height: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        ul li:nth-child(1){
+            background-color:green ;
+            transform: rotateY(60deg) translateZ(200px);
+        }
+        ul li:nth-child(2){
+            background-color: blue;
+            transform: rotateY(120deg) translateZ(200px);
+        }
+        ul li:nth-child(3){
+            background-color: yellow;
+            transform: rotateY(180deg) translateZ(200px);
+        }
+        ul li:nth-child(4){
+            background-color: pink;
+            transform: rotateY(240deg) translateZ(200px);
+        }
+        ul li:nth-child(5){
+            background-color: purple;
+            transform: rotateY(300deg) translateZ(200px);
+        }
+        ul li:nth-child(6){
+            background-color: gold;
+            transform: rotateY(360deg) translateZ(200px);
+        }
+        ul img{
+            height: 200px;
+            width: 200px;
+            border: 3px solid skyblue;
+            box-sizing: border-box;
+        }
+        .heart{
+            width: 173px;
+            height: 157px;
+            position: absolute;
+            left: 100px;
+            bottom: 100px;
+            animation: move 10s linear 0s infinite normal;
+        }
+        @keyframes move {
+            0%{
+                left: 100px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            20%{
+                left: 300px;
+                bottom: 300px;
+                opacity: 0;
+            }
+            40%{
+                left: 500px;
+                bottom: 500px;
+                opacity: 1;
+            }
+            60%{
+                left: 800px;
+                bottom: 300px;
+                opacity: 0;
+            }
+            80%{
+                left: 1200px;
+                bottom: 100px;
+                opacity: 1;
+            }
+            100%{
+                left: 800px;
+                bottom: 100px;
+                opacity: 0;
+            }
+        }
+
+    </style>
+<body>
+<ul>
+    <li><img src="images/2.jpg" alt=""></li>
+    <li><img src="images/3.jpg" alt=""></li>
+    <li><img src="images/4.jpg" alt=""></li>
+    <li><img src="images/5.jpg" alt=""></li>
+    <li><img src="images/6.jpg" alt=""></li>
+    <li><img src="images/7.jpg" alt=""></li>
+</ul>
+<img class="heart" src="images/timg.jpg" alt="">
+<audio src="zhongyu.mp3" loop="loop" controls autoplay></audio>
+
+</body>
+</html>
